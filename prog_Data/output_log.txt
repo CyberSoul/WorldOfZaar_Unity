@@ -1,0 +1,195 @@
+Initialize engine version: 4.3.4f1 (e444f76e01cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvumdshim.dll 9.18.13.3523]
+    Renderer: NVIDIA GeForce GT 550M
+    Vendor:   NVIDIA
+    VRAM:     1998 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Max Sliadniev\University\Mir_Zaara\New Unity Project\prog_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.069 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1366x768 60Hz; virtual: 2646x1024 at 0,0
+i'm here
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Text:Awake() (at H:\Documents\New Unity Project\Assets\Text.cs:37)
+ 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\tournamentHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\tournamentHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\tournamentHower.png
+UnityEngine.WWW:LoadImageIntoTexture(Texture2D)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:24)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+tournament  740454
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:28)
+ 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\auctionHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\auctionHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\auctionHower.png
+UnityEngine.WWW:LoadImageIntoTexture(Texture2D)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:24)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+auction  562780
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:28)
+ 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\myChambersHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\myChambersHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\myChambersHower.png
+UnityEngine.WWW:LoadImageIntoTexture(Texture2D)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:24)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+myChambers  485105
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:28)
+ 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\deckMasterHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\deckMasterHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\deckMasterHower.png
+UnityEngine.WWW:LoadImageIntoTexture(Texture2D)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:24)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+deckMaster  538611
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:28)
+ 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\duelHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\duelHower.png
+UnityEngine.WWW:GetTexture(Boolean)
+UnityEngine.WWW:get_texture()
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:23)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file H:\Documents\New Unity Project\Assets\Images\NavigationBar\Lables\duelHower.png
+UnityEngine.WWW:LoadImageIntoTexture(Texture2D)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:24)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Export/WWW.cpp line 1066] 
+(Filename: H Line: 0)
+
+duel  480053
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+TabButton_Animation:Start() (at H:\Documents\New Unity Project\Assets\TabButton_Animation.cs:28)
+ 
+(Filename: H Line: 0)
+
