@@ -3,25 +3,25 @@ using System.Collections;
 
 public class Card{
 
-	public Texture2D background;
-	public Texture2D picture;
+	public Texture2D background { get; set; }
+	public Texture2D picture { get; set; }
 
-	public string name;
-	public string info;
+	public string name { get; set; }
+	public string info { get; set; }
 
-	public bool isRare;
+	public bool isRare { get; set; }
 
-	public Texture2D iconDef;
-	public Texture2D iconHp;
-	public Texture2D iconAtack;
+	public Texture2D iconDef { get; set; }
+	public Texture2D iconHp { get; set; }
+	public Texture2D iconAtack { get; set; }
 
-	public int energy;
-	public int atack;
-	public int hp;
-	public int def;
+	public int energy { get; set; }
+	public int atack { get; set; }
+	public int hp { get; set; }
+	public int def { get; set; }
 
-	public Color backgroundColor;
-	public Color textColor;
+	public Color backgroundColor { get; set; }
+	public Color textColor { get; set; }
 
 	public Card(){
 		background = null;
@@ -45,12 +45,34 @@ public class Card{
 		textColor = new Color (0, 0, 0);
 	}
 
+	public Card(Card card){
+		background = card.background;
+		picture = card.picture;
+		
+		name = card.name;
+		info = card.info;
+		
+		isRare = card.isRare;
+		
+		iconDef = card.iconDef ;
+		iconHp = card.iconHp;
+		iconAtack = card.iconAtack;
+		
+		energy = card.energy;
+		atack = card.atack;
+		hp = card.hp;
+		def = card.def;
+		
+		backgroundColor = card.backgroundColor;
+		textColor = card.textColor;
+	}
+
 	public void Init(){
 		background = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/_TE", typeof(Texture2D) );
 		picture = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/Rokirovaka_support_VE", typeof(Texture2D) );
 		
 		name = "Name";
-		info = "Info/nSome info/nmore info/....";
+		info = "Info\nSome info\nmore info/....";
 		
 		isRare = false;
 		

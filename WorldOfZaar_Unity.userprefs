@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameObjects\Players\PlayerFieldSprite.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameObjects\Players\PlayerFieldSprite.cs" Line="24" Column="28" />
+      <File FileName="Assets\Scripts\GameObjects\Players\PlayerField.cs" Line="50" Column="59" />
+      <File FileName="Assets\Scripts\GameObjects\Card\CardSprite.cs" Line="12" Column="30" />
+      <File FileName="Assets\Scripts\GameObjects\Players\Player.cs" Line="56" Column="31" />
+      <File FileName="Assets\Scripts\GameObjects\Card\CardSpriteMini.cs" Line="15" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

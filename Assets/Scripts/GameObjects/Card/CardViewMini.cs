@@ -28,6 +28,8 @@ public class CardViewMini : MonoBehaviour {
 	private GUITexture g_iconHp;
 	private GUITexture g_iconDef;
 
+	private GUITexture g_nameBackground;
+
 	// Use this for initialization
 	void Start () {
 		if(card == null){
@@ -58,6 +60,8 @@ public class CardViewMini : MonoBehaviour {
 		g_iconAtack = transform.FindChild ("atack").GetComponent<GUITexture>();
 		g_iconDef = transform.FindChild ("def").GetComponent<GUITexture>();
 		g_iconHp = transform.FindChild ("hp").GetComponent<GUITexture>();
+
+		g_nameBackground = transform.FindChild ("Name").GetComponent<GUITexture>();
 	}
 
 	private void AplyCard(){		
@@ -121,5 +125,10 @@ public class CardViewMini : MonoBehaviour {
 
 		g_picture.pixelInset = new Rect (offsetWithoutBorderX, offsetWithoutBorderY, 
 		                                 widthWithoutBorder, heightWithoutBorder / 2);
+
+		
+		
+		g_nameBackground.pixelInset = new Rect (offsetWithoutBorderX, offsetWithoutBorderY + ellementHeight * 5,
+		                                        widthWithoutBorder, ellementHeight );
 	}
 }

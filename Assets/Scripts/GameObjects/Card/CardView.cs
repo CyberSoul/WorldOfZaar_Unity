@@ -47,10 +47,6 @@ public class CardView : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		string test = GUI.TextArea ( new Rect(100, 100,
-		                        100, 100 ),
-		                            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n" +
-		                            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", (int)300 );
 		GUI.TextArea (infoRect, card.info, (int)infoRect.height);
 	}
 
@@ -91,7 +87,7 @@ public class CardView : MonoBehaviour {
 	
 	private void SetBaseSizes(){
 		GetBaseHandles ();
-		
+
 		g_background.pixelInset = new Rect (offsetX, offsetY, width, height);
 		
 		float widthWithoutBorder = width * (1 - border * 2);
