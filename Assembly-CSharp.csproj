@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Controllers\ControllerButtonSurrender.cs" />
      <Compile Include="Assets\Scripts\Controllers\ControllerMenu.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Card\Card.cs" />
+     <Compile Include="Assets\Scripts\GameObjects\Card\CardFighter.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Card\CardSprite.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Card\CardSpriteMini.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Card\CardView.cs" />

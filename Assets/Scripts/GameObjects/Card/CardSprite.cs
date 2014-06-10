@@ -33,7 +33,7 @@ public class CardSprite : MonoBehaviour {
 	
 	void Start() {
 		if(card == null){
-			card = new Card ();
+			card = new CardFighter ();
 		}
 		card.Init ();
 		SetBaseSizes ();
@@ -50,15 +50,27 @@ public class CardSprite : MonoBehaviour {
 
 		GUI.DrawTexture(background, card.background);
 		GUI.DrawTexture(picture, card.picture);
-		GUI.DrawTexture(iconHp, card.iconHp);
-		GUI.DrawTexture(iconAtack, card.iconAtack);
-		GUI.DrawTexture(iconDef, card.iconDef);
-
+		
 		GUI.TextArea (cardName, card.name, (int)cardName.height, textStyle);
 		GUI.TextArea (energy, card.energy.ToString(), (int)energy.height, textStyle);
-		GUI.TextArea (atack, card.atack.ToString(), (int)atack.height, textStyle);
-		GUI.TextArea (def, card.def.ToString(), (int)def.height, textStyle);
-		GUI.TextArea (hp, card.hp.ToString(), (int)hp.height, textStyle);
+
+		switch (card.cardType) {
+			case (CardType.Support):{
+			}
+			break;
+			case CardType.Fighter:{
+				CardFighter cardFighter = (CardFighter)card;
+						
+				GUI.DrawTexture(iconHp, cardFighter.iconHp);
+				GUI.DrawTexture(iconAtack, cardFighter.iconAtack);
+				GUI.DrawTexture(iconDef, cardFighter.iconDef);
+
+				GUI.TextArea (atack, cardFighter.atack.ToString(), (int)atack.height, textStyle);
+				GUI.TextArea (def, cardFighter.def.ToString(), (int)def.height, textStyle);
+				GUI.TextArea (hp, cardFighter.hp.ToString(), (int)hp.height, textStyle);
+			}
+			break;
+		}
 		GUI.TextArea (info, card.info, (int)info.height, infoStyle);
 
 		GUI.matrix = matrixBackup;
@@ -78,7 +90,18 @@ public class CardSprite : MonoBehaviour {
 		cardName = new Rect (offsetWithoutBorderX, offsetWithoutBorderY, widthWithoutBorder - ellementWidth, ellementHeight );
 		energy = new Rect (cardName.xMax, cardName.yMin, ellementWidth, cardName.height);
 
-		iconHp = new Rect (cardName.xMin, cardName.yMax, ellementWidth, ellementHeight );
+		switch (card.cardType) {
+			case (CardType.Support):{
+				iconHp = new Rect (cardName.xMin, cardName.yMax, 0, 0 );
+				
+			}
+			break;
+			case CardType.Fighter:
+			{
+				iconHp = new Rect (cardName.xMin, cardName.yMax, ellementWidth, ellementHeight );
+			}
+			break;
+		}
 		hp = new Rect (iconHp.xMax, iconHp.yMin, iconHp.width, iconHp.height );
 		
 		iconDef = new Rect (hp.xMax, hp.yMin, iconHp.width, iconHp.height );
@@ -86,10 +109,11 @@ public class CardSprite : MonoBehaviour {
 		
 		iconAtack = new Rect (def.xMax, def.yMin, iconHp.width, iconHp.height );
 		atack = new Rect (iconAtack.xMax, iconAtack.yMin, iconHp.width, iconHp.height );
-
-		picture = new Rect (iconHp.xMin, iconHp.yMax, widthWithoutBorder, ellementHeight * 5);
 		
-		info = new Rect (picture.xMin, picture.yMax, widthWithoutBorder, ellementHeight * 5);
+		picture = new Rect (iconHp.xMin, iconHp.yMax, widthWithoutBorder, ellementHeight * 5);
+
+		float infoHeight = heightWithoutBorder - picture.height - hp.height - cardName.height;
+		info = new Rect (picture.xMin, picture.yMax, widthWithoutBorder, infoHeight);
 
 		pivot = new Vector2(limitRect.xMin + limitRect.width * 0.5f, limitRect.yMin + limitRect.height * 0.5f);
 	}

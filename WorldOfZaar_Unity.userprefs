@@ -1,16 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameObjects\Players\PlayerFieldSprite.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameObjects\Card\Card.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameObjects\Players\PlayerFieldSprite.cs" Line="24" Column="28" />
-      <File FileName="Assets\Scripts\GameObjects\Players\PlayerField.cs" Line="50" Column="59" />
-      <File FileName="Assets\Scripts\GameObjects\Card\CardSprite.cs" Line="12" Column="30" />
-      <File FileName="Assets\Scripts\GameObjects\Players\Player.cs" Line="56" Column="31" />
-      <File FileName="Assets\Scripts\GameObjects\Card\CardSpriteMini.cs" Line="15" Column="2" />
+      <File FileName="Assets\Scripts\GameObjects\Card\CardFighter.cs" Line="60" Column="23" />
+      <File FileName="Assets\Scripts\GameObjects\Players\PlayerFieldSprite.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObjects\Players\PlayerField.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObjects\Card\CardSprite.cs" Line="36" Column="26" />
+      <File FileName="Assets\Scripts\GameObjects\Players\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObjects\Card\CardSpriteMini.cs" Line="38" Column="19" />
+      <File FileName="Assets\Scripts\GameObjects\Card\Card.cs" Line="51" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Max Sliadniev\University\Mir_Zaara\WorldOfZaar_Unity\Assets\Scripts\GameObjects\Card\CardFighter.cs" line="63" />
+      <Breakpoint file="C:\Users\Max Sliadniev\University\Mir_Zaara\WorldOfZaar_Unity\Assets\Scripts\GameObjects\Card\Card.cs" line="52" />
+      <Breakpoint file="C:\Users\Max Sliadniev\University\Mir_Zaara\WorldOfZaar_Unity\Assets\Scripts\GameObjects\Card\CardSpriteMini.cs" line="37" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

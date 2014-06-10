@@ -75,14 +75,24 @@ public class CardView : MonoBehaviour {
 		g_name.text = card.name;
 		g_info.text = card.info;
 		g_energy.text = card.energy.ToString();
-		
-		g_atack.text = card.atack.ToString();
-		g_def.text = card.def.ToString();
-		g_hp.text = card.hp.ToString();
-		
-		g_iconHp.texture = card.iconHp;
-		g_iconAtack.texture = card.iconAtack;
-		g_iconDef.texture = card.iconDef;
+
+		switch (card.cardType) {
+		case (CardType.Support):{
+		}
+			break;
+		case CardType.Fighter:{
+			CardFighter cardFighter = (CardFighter)card;
+			
+			g_atack.text = cardFighter.atack.ToString();
+			g_def.text = cardFighter.def.ToString();
+			g_hp.text = cardFighter.hp.ToString();
+			
+			g_iconHp.texture = cardFighter.iconHp;
+			g_iconAtack.texture = cardFighter.iconAtack;
+			g_iconDef.texture = cardFighter.iconDef;
+		}
+			break;
+		}
 	}
 	
 	private void SetBaseSizes(){
@@ -106,31 +116,42 @@ public class CardView : MonoBehaviour {
 		printOffsetX = ellementWidth * 5 / 2;
 		g_name.pixelOffset = new Vector2 (offsetWithoutBorderX + ellementWidth + printOffsetX, 
 		                               offsetWithoutBorderY + ellementHeight * 11 + printOffsetY);
-
-		printOffsetX = ellementWidth / 2;
-		g_atack.pixelOffset = new Vector2 ( offsetWithoutBorderX + ellementWidth + printOffsetX, 
-		                                   offsetWithoutBorderY + ellementHeight * 10 + printOffsetY );
-		g_def.pixelOffset = new Vector2 ( offsetWithoutBorderX + + ellementWidth * 3+ printOffsetX,
-		                                 offsetWithoutBorderY + ellementHeight * 10 + printOffsetY );
-		g_hp.pixelOffset = new Vector2 ( offsetWithoutBorderX + ellementWidth * 5 + printOffsetX,
-		                                offsetWithoutBorderY + ellementHeight * 10 + printOffsetY );
-		
-		
-		g_iconAtack.pixelInset = new Rect ( offsetWithoutBorderX,
-		                                   offsetWithoutBorderY + ellementHeight * 10,
-		                                   ellementWidth, ellementHeight );
-		g_iconDef.pixelInset = new Rect ( offsetWithoutBorderX + ellementWidth * 2, 
-		                                 offsetWithoutBorderY + ellementHeight * 10, 
-		                                 ellementWidth, ellementHeight );
-		g_iconHp.pixelInset = new Rect ( offsetWithoutBorderX + ellementWidth * 4,
-		                                offsetWithoutBorderY + ellementHeight * 10,
-		                                ellementWidth, ellementHeight );
+		switch (card.cardType) {
+		case (CardType.Support):{			
+			infoRect = new Rect (offsetWithoutBorderX, Screen.width - (offsetWithoutBorderY + ellementHeight * 6),
+			                     widthWithoutBorder, ellementHeight * 6);			
+		}
+			break;
+		case CardType.Fighter:
+		{
+			printOffsetX = ellementWidth / 2;
+			g_atack.pixelOffset = new Vector2 ( offsetWithoutBorderX + ellementWidth + printOffsetX, 
+			                                   offsetWithoutBorderY + ellementHeight * 10 + printOffsetY );
+			g_def.pixelOffset = new Vector2 ( offsetWithoutBorderX + + ellementWidth * 3+ printOffsetX,
+			                                 offsetWithoutBorderY + ellementHeight * 10 + printOffsetY );
+			g_hp.pixelOffset = new Vector2 ( offsetWithoutBorderX + ellementWidth * 5 + printOffsetX,
+			                                offsetWithoutBorderY + ellementHeight * 10 + printOffsetY );
+			
+			
+			g_iconAtack.pixelInset = new Rect ( offsetWithoutBorderX,
+			                                   offsetWithoutBorderY + ellementHeight * 10,
+			                                   ellementWidth, ellementHeight );
+			g_iconDef.pixelInset = new Rect ( offsetWithoutBorderX + ellementWidth * 2, 
+			                                 offsetWithoutBorderY + ellementHeight * 10, 
+			                                 ellementWidth, ellementHeight );
+			g_iconHp.pixelInset = new Rect ( offsetWithoutBorderX + ellementWidth * 4,
+			                                offsetWithoutBorderY + ellementHeight * 10,
+			                                ellementWidth, ellementHeight );
+			
+			
+			infoRect = new Rect (offsetWithoutBorderX, Screen.width - (offsetWithoutBorderY + ellementHeight * 5),
+			                     widthWithoutBorder, ellementHeight * 5);
+		}
+			break;
+		}
 		
 		g_picture.pixelInset = new Rect (offsetWithoutBorderX , offsetWithoutBorderY + ellementHeight * 5, 
 		                                 widthWithoutBorder, ellementHeight * 5);
-
-		infoRect = new Rect (offsetWithoutBorderX, Screen.width - (offsetWithoutBorderY + ellementHeight * 5),
-		                    widthWithoutBorder, ellementHeight * 5);
 		//g_info.pixelOffset = new Vector2()
 	}
 }

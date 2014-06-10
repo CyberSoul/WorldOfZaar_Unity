@@ -32,7 +32,7 @@ public class CardSpriteMini : MonoBehaviour {
 	
 	void Start() {
 		if(card == null){
-			card = new Card ();
+			card = new CardFighter ();
 		}
 		card.Init ();
 		SetBaseSizes ();
@@ -48,15 +48,24 @@ public class CardSpriteMini : MonoBehaviour {
 		
 		GUI.DrawTexture(background, card.background);
 		GUI.DrawTexture(picture, card.picture);
-		GUI.DrawTexture(iconHp, card.iconHp);
-		GUI.DrawTexture(iconAtack, card.iconAtack);
-		GUI.DrawTexture(iconDef, card.iconDef);
 		
 		GUI.TextArea (cardName, card.name, (int)cardName.height, textStyle);
 		GUI.TextArea (energy, card.energy.ToString(), (int)energy.height, textStyle);
-		GUI.TextArea (atack, card.atack.ToString(), (int)atack.height, textStyle);
-		GUI.TextArea (def, card.def.ToString(), (int)def.height, textStyle);
-		GUI.TextArea (hp, card.hp.ToString(), (int)hp.height, textStyle);
+
+		switch (card.cardType) {
+				case CardType.Fighter:
+						{
+								CardFighter cardFighter = (CardFighter)card;
+								GUI.DrawTexture (iconHp, cardFighter.iconHp);
+								GUI.DrawTexture (iconAtack, cardFighter.iconAtack);
+								GUI.DrawTexture (iconDef, cardFighter.iconDef);
+			
+								GUI.TextArea (atack, cardFighter.atack.ToString (), (int)atack.height, textStyle);
+								GUI.TextArea (def, cardFighter.def.ToString (), (int)def.height, textStyle);
+								GUI.TextArea (hp, cardFighter.hp.ToString (), (int)hp.height, textStyle);
+						}
+						break;
+				}
 		
 		GUI.matrix = matrixBackup;
 	}
@@ -73,20 +82,41 @@ public class CardSpriteMini : MonoBehaviour {
 		float ellementWidth = widthWithoutBorder / 4;
 		
 		cardName = new Rect (offsetWithoutBorderX, offsetWithoutBorderY, widthWithoutBorder, ellementHeight );
+		switch (card.cardType) {
+			case CardType.Fighter:{			
+				/*iconEnergy = new Rect (cardName.xMin, cardName.yMax, ellementWidth, ellementHeight);
+				energy = new Rect (iconEnergy.xMax, iconEnergy.yMin, ellementWidth, ellementHeight);*/
+				energy = new Rect (cardName.xMin, cardName.yMax, ellementWidth * 2, ellementHeight);
 
-		iconEnergy = new Rect (cardName.xMin, cardName.yMax, ellementWidth, ellementHeight);
-		energy = new Rect (iconEnergy.xMax, iconEnergy.yMin, ellementWidth, ellementHeight);
-		
-		iconHp = new Rect (energy.xMax, energy.yMin, ellementWidth, ellementHeight );
-		hp = new Rect (iconHp.xMax, iconHp.yMin, iconHp.width, iconHp.height );
-		
-		iconDef = new Rect (iconEnergy.xMin, iconEnergy.yMax, iconHp.width, iconHp.height );
-		def = new Rect (iconDef.xMax, iconDef.yMin, iconHp.width, iconHp.height );
-		
-		iconAtack = new Rect (def.xMax, def.yMin, iconHp.width, iconHp.height );
-		atack = new Rect (iconAtack.xMax, iconAtack.yMin, iconHp.width, iconHp.height );
-		
-		picture = new Rect (iconDef.xMin, iconDef.yMax, widthWithoutBorder, ellementHeight * 3);
+				iconHp = new Rect (energy.xMax, energy.yMin, ellementWidth, ellementHeight );
+				hp = new Rect (iconHp.xMax, iconHp.yMin, iconHp.width, iconHp.height );
+				
+				iconDef = new Rect (energy.xMin, energy.yMax, iconHp.width, iconHp.height );
+				def = new Rect (iconDef.xMax, iconDef.yMin, iconDef.width, iconDef.height );
+				
+				iconAtack = new Rect (def.xMax, def.yMin, iconHp.width, iconHp.height );
+				atack = new Rect (iconAtack.xMax, iconAtack.yMin, iconAtack.width, iconAtack.height );
+				}
+			break;
+		case CardType.Support:{
+			//iconEnergy = new Rect (cardName.xMin, cardName.yMax, ellementWidth * 2, ellementHeight);
+			//energy = new Rect (iconEnergy.xMax, iconEnergy.yMin, iconEnergy.width, iconEnergy.height);
+			energy = new Rect (cardName.xMin, cardName.yMax, widthWithoutBorder, ellementHeight);
+
+			iconHp = new Rect (energy.xMax, energy.yMin, 0, 0 );
+			hp = new Rect (iconHp.xMax, iconHp.yMin, iconHp.width, iconHp.height );
+			
+			iconDef = new Rect (energy.xMin, energy.yMax, iconHp.width, iconHp.height );
+			def = new Rect (iconDef.xMax, iconDef.yMin, iconDef.width, iconDef.height );
+			
+			iconAtack = new Rect (def.xMax, def.yMin, 0, 0 );
+			atack = new Rect (iconAtack.xMax, iconAtack.yMin, iconAtack.width, iconAtack.height );
+			}
+			break;
+		}
+
+		float pictureHeight = heightWithoutBorder - cardName.height - energy.height - iconDef.height;
+		picture = new Rect (iconDef.xMin, iconDef.yMax, widthWithoutBorder, pictureHeight);
 		
 		pivot = new Vector2(limitRect.xMin + limitRect.width * 0.5f, limitRect.yMin + limitRect.height * 0.5f);
 	}

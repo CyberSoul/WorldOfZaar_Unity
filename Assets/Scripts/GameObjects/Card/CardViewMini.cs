@@ -71,13 +71,23 @@ public class CardViewMini : MonoBehaviour {
 		g_name.text = card.name;
 		g_energy.text = card.energy.ToString();
 
-		g_atack.text = card.atack.ToString();
-		g_def.text = card.def.ToString();
-		g_hp.text = card.hp.ToString();
-
-		g_iconHp.texture = card.iconHp;
-		g_iconAtack.texture = card.iconAtack;
-		g_iconDef.texture = card.iconDef;
+		switch (card.cardType) {
+		case (CardType.Support):{
+		}
+			break;
+		case CardType.Fighter:{
+			CardFighter cardFighter = (CardFighter)card;
+			
+			g_atack.text = cardFighter.atack.ToString();
+			g_def.text = cardFighter.def.ToString();
+			g_hp.text = cardFighter.hp.ToString();
+			
+			g_iconHp.texture = cardFighter.iconHp;
+			g_iconAtack.texture = cardFighter.iconAtack;
+			g_iconDef.texture = cardFighter.iconDef;
+		}
+			break;
+		}
 	}
 
 	private void SetBaseSizes(){
@@ -101,31 +111,64 @@ public class CardViewMini : MonoBehaviour {
 			
 		float tempOffsetX = widthWithoutBorder / 4;
 		//float tempOffsetY = offsetWithoutBorderY - ellementHeight;
-
-		printOffsetX = tempOffsetX / 2;
-		g_energy.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX + printOffsetX,
-		                                    offsetWithoutBorderY + ellementHeight * 4 + printOffsetY );
-		g_atack.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX * 3 + printOffsetX, 
-		                                   offsetWithoutBorderY + ellementHeight * 4 + printOffsetY );
-		g_def.pixelOffset = new Vector2 ( offsetWithoutBorderX + + tempOffsetX + printOffsetX,
-		                                 offsetWithoutBorderY + ellementHeight * 3 + printOffsetY );
-		g_hp.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX * 3 + printOffsetX,
-		                                offsetWithoutBorderY + ellementHeight * 3 + printOffsetY );
-
 		
-		g_iconAtack.pixelInset = new Rect ( offsetWithoutBorderX + tempOffsetX * 2,
-		                                   offsetWithoutBorderY + ellementHeight * 4,
-		                                   tempOffsetX, ellementHeight );
-		g_iconDef.pixelInset = new Rect ( offsetWithoutBorderX, 
-		                                 offsetWithoutBorderY + ellementHeight * 3, 
-		                                 tempOffsetX, ellementHeight );
-		g_iconHp.pixelInset = new Rect ( offsetWithoutBorderX + tempOffsetX * 2,
-		                                offsetWithoutBorderY + ellementHeight * 3,
-		                                tempOffsetX, ellementHeight );
+		float pictureHeight = heightWithoutBorder - ellementHeight;
+		switch (card.cardType) {
+			case (CardType.Support):
+				{	
+					printOffsetX = widthWithoutBorder / 2;
+					g_energy.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX + printOffsetX,
+					                                    offsetWithoutBorderY + ellementHeight * 4 + printOffsetY );
+					/*g_atack.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX * 3 + printOffsetX, 
+					                                   offsetWithoutBorderY + ellementHeight * 4 + printOffsetY );
+					g_def.pixelOffset = new Vector2 ( offsetWithoutBorderX + + tempOffsetX + printOffsetX,
+					                                 offsetWithoutBorderY + ellementHeight * 3 + printOffsetY );
+					g_hp.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX * 3 + printOffsetX,
+					                                offsetWithoutBorderY + ellementHeight * 3 + printOffsetY );*/
+					
+					
+					g_iconAtack.pixelInset = new Rect ( offsetWithoutBorderX + tempOffsetX * 2,
+					                                   offsetWithoutBorderY + ellementHeight * 4,
+					                                   0, 0 );
+					g_iconDef.pixelInset = new Rect ( offsetWithoutBorderX, 
+					                                 offsetWithoutBorderY + ellementHeight * 3, 
+					                                 0, 0 );
+					g_iconHp.pixelInset = new Rect ( offsetWithoutBorderX + tempOffsetX * 2,
+					                                offsetWithoutBorderY + ellementHeight * 3,
+					                                0, 0 );
+					pictureHeight -= ellementHeight;
+				}
+				break;
+			case CardType.Fighter:
+				{
+					printOffsetX = tempOffsetX / 2;
+					g_energy.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX + printOffsetX,
+					                                    offsetWithoutBorderY + ellementHeight * 4 + printOffsetY );
+					g_atack.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX * 3 + printOffsetX, 
+					                                   offsetWithoutBorderY + ellementHeight * 4 + printOffsetY );
+					g_def.pixelOffset = new Vector2 ( offsetWithoutBorderX + + tempOffsetX + printOffsetX,
+					                                 offsetWithoutBorderY + ellementHeight * 3 + printOffsetY );
+					g_hp.pixelOffset = new Vector2 ( offsetWithoutBorderX + tempOffsetX * 3 + printOffsetX,
+					                                offsetWithoutBorderY + ellementHeight * 3 + printOffsetY );
+					
+					
+					g_iconAtack.pixelInset = new Rect ( offsetWithoutBorderX + tempOffsetX * 2,
+					                                   offsetWithoutBorderY + ellementHeight * 4,
+					                                   tempOffsetX, ellementHeight );
+					g_iconDef.pixelInset = new Rect ( offsetWithoutBorderX, 
+					                                 offsetWithoutBorderY + ellementHeight * 3, 
+					                                 tempOffsetX, ellementHeight );
+					g_iconHp.pixelInset = new Rect ( offsetWithoutBorderX + tempOffsetX * 2,
+					                                offsetWithoutBorderY + ellementHeight * 3,
+					                                tempOffsetX, ellementHeight );
+					
+					pictureHeight -= ellementHeight*2;
+				}
+				break;
+		}
 
 		g_picture.pixelInset = new Rect (offsetWithoutBorderX, offsetWithoutBorderY, 
-		                                 widthWithoutBorder, heightWithoutBorder / 2);
-
+		                                 widthWithoutBorder, pictureHeight);
 		
 		
 		g_nameBackground.pixelInset = new Rect (offsetWithoutBorderX, offsetWithoutBorderY + ellementHeight * 5,
