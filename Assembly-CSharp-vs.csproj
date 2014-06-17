@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\GameObjects\Players\Player.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Players\PlayerField.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Players\PlayerFieldSprite.cs" />
+     <Compile Include="Assets\Scripts\GameObjects\Players\PlayerHand.cs" />
      <Compile Include="Assets\Scripts\Property.cs" />
      <Compile Include="Assets\Scripts\Subset.cs" />
      <Compile Include="Assets\Scripts\TabButton_Animation.cs" />
