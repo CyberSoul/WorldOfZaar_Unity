@@ -8,7 +8,8 @@ public class PlayerHand : MonoBehaviour {
 
 	public Texture2D fieldBackground = null;
 
-	private Rect[] g_fields;
+	private Rect[] fields;
+	private GUITexture[] g_fields;
 	// Use this for initialization
 	void Start () {
 		Init ();
@@ -21,15 +22,25 @@ public class PlayerHand : MonoBehaviour {
 
 	public void Init(){
 		float fieldWidth = limitRect.width / fieldsCount;
-		g_fields = new Rect[fieldsCount];
+		fields = new Rect[fieldsCount];
+		g_fields = new GUITexture[fieldsCount];
+		GameObject field;
 		for(int i = 0; i < fieldsCount; ++i){
-			g_fields[i] = new Rect(limitRect.x + fieldWidth * i, limitRect.y, fieldWidth, limitRect.height );
+			fields[i] = new Rect(limitRect.x + fieldWidth * i, limitRect.y, fieldWidth, limitRect.height );
+		//	field = new GameObject
+			//g_fields[i] = 
 		}
 	}
 
 	void OnGUI(){
 		for(int i = 0; i < fieldsCount; ++i){			
-			GUI.DrawTexture(g_fields[i], fieldBackground);
+			GUI.DrawTexture(fields[i], fieldBackground);
 		}
+	}
+	
+	void OnMouseDown(){
+		GameObject log = GameObject.Find ("Log");
+		GUIText logText = (GUIText)log.GetComponent (typeof(GUIText));
+		logText.text = "[LOG] Hand";
 	}
 }

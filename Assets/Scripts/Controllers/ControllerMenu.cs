@@ -4,7 +4,7 @@ using System;
 
 public class ControllerMenu : MonoBehaviour {
 	
-	public string chatText = "\"чат"; 
+	public string chatText = "чат"; 
 	public string logText = "@лог";
 	public string surrenderText = "@сдаться";
 	public string skipText = "@пропуск";
@@ -13,7 +13,8 @@ public class ControllerMenu : MonoBehaviour {
 	public int buttonHight = 54;
 	
 	private GameObject buttonChat;
-	
+
+	private float timeRaund;
 	public string CheckText(string str)
 	{
 		string str1="";
@@ -33,9 +34,13 @@ public class ControllerMenu : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-		buttonChat = GameObject.Find ("buttonChat");
+		/*buttonChat = GameObject.Find ("buttonChat");
 		GUIText chatTxt = (GUIText)buttonChat.GetComponent(typeof(GUIText));
-		chatTxt.text = CheckText(chatText);//CheckText(chatText);
+		chatTxt.text = CheckText(chatText);*///CheckText(chatText);
+
+		buttonChat = GameObject.Find ("buttonTime");
+		GUIText chatTxt = (GUIText)buttonChat.GetComponent(typeof(GUIText));
+		chatTxt.text = ((int)( Time.time - timeRaund )).ToString();
 	}
 	
 	// Use this for initialization
@@ -45,6 +50,8 @@ public class ControllerMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (( Time.time - timeRaund ) > 60) {
+			timeRaund = Time.time;
+		}
 	}
 }

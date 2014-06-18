@@ -57,8 +57,8 @@ public class Player{
 		Player res = new Player ();
 		res.id = 0;
 		res.health = 30;
-		res.defense = 2;
-		res.energy = 3;
+		res.defense = 0;
+		res.energy = 6;
 		res.mystic = 1;
 		res.negative = 0;
 		res.race = Race.DarkElf;

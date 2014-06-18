@@ -57,15 +57,31 @@ public class CardFighter :  Card {
 		cardType = card.cardType;
 		}
 
-	public override void Init(){
-		base.Init ();
+	public override void Init(int id){
+		base.Init (id);
 		
 		iconDef = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/def", typeof(Texture2D) );
 		iconHp = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/hp", typeof(Texture2D) );
 		iconAtack = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/atack", typeof(Texture2D) );
 
-		atack = 2;
-		hp = 4;
-		def = 3;
+		switch(id){
+		case 1:
+			atack = 2;
+			hp = 3;
+			def = 0;
+			break;
+			
+		case 2:
+			atack = 1;
+			hp = 8;
+			def = 2;
+			break;
+			
+		case 3:
+			atack = 2;
+			hp = 4;
+			def = 1;
+			break;
+		}
 	}
 }

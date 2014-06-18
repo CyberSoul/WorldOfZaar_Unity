@@ -36,7 +36,7 @@ public class CardView : MonoBehaviour {
 		if(card == null){
 			card = new Card ();
 		}
-		card.Init ();
+		card.Init (1);
 		SetBaseSizes ();
 		AplyCard ();
 	}

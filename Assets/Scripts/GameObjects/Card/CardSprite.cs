@@ -33,9 +33,13 @@ public class CardSprite : MonoBehaviour {
 	
 	void Start() {
 		if(card == null){
-			card = new CardFighter ();
+			if( cardId < 4){
+				card = new CardFighter ();
+			} else{
+				card = new Card();
+			}
 		}
-		card.Init ();
+		card.Init (cardId);
 		SetBaseSizes ();
 	}
 		

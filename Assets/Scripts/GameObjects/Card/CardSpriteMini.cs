@@ -32,9 +32,13 @@ public class CardSpriteMini : MonoBehaviour {
 	
 	void Start() {
 		if(card == null){
+			if( cardId < 4){
 			card = new CardFighter ();
+			} else{
+				card = new Card();
+			}
 		}
-		card.Init ();
+		card.Init (cardId);
 		SetBaseSizes ();
 	}
 	

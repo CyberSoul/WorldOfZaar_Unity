@@ -35,7 +35,9 @@ public class PlayerFieldSprite : MonoBehaviour {
 	private Rect g_negative;
 	
 	private Vector2 pivot;
-	
+
+//	private CardSpriteMini figter_0;
+
 	public PlayerFieldSprite(Rect rect){
 		limitRect = rect;
 	}
@@ -67,6 +69,13 @@ public class PlayerFieldSprite : MonoBehaviour {
 		g_talon = new Rect (g_def.xMax, g_def.yMin, g_deck.width, g_deck.height);
 		
 		pivot = new Vector2(limitRect.xMin + limitRect.width * 0.5f, limitRect.yMin + limitRect.height * 0.5f);
+
+		//figter_0 = (CardSpriteMini)(transform.FindChild ("Fighter_0"));
+		/*figter_0 = (CardSpriteMini)(GameObject.Find ("Fighter_0"));
+		if( figter_0 != null){
+			figter_0.angle = angle;
+			figter_0.limitRect = g_fighters[0];
+		}*/
 	}
 	
 	private void SetFighterSizes(Rect limitRectFighter){
@@ -116,5 +125,13 @@ public class PlayerFieldSprite : MonoBehaviour {
 		GUI.TextArea (g_negative, player.negative.ToString(), (int)g_negative.height, textStyle);
 
 		GUI.matrix = matrixBackup;
+	}
+
+	
+	
+	void OnMouseDown(){
+		GameObject log = GameObject.Find ("Log");
+		GUIText logText = (GUIText)log.GetComponent (typeof(GUIText));
+		logText.text = "[LOG] Field " + angle;
 	}
 }

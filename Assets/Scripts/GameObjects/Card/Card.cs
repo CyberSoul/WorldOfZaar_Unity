@@ -48,15 +48,67 @@ public class Card{
 		cardType = card.cardType;
 	}
 
-	public virtual void Init(){
-		background = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/_TE", typeof(Texture2D) );
-		picture = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/Rokirovaka_support_VE", typeof(Texture2D) );
-		
-		name = "Name";
-		info = "Info\nSome info\nmore info/....";
-		
-		isRare = false;
-		
-		energy = 1;
+	public virtual void Init( int id ){
+		switch( id ){
+		case 1:
+			background = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/_TE", typeof(Texture2D) );
+			picture = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/CardPicture/SpiderFighter", typeof(Texture2D) );
+			
+			name = "Fighter";
+			info = "";
+			
+			isRare = false;
+			
+			energy = 1;
+			break;
+			
+		case 2:
+			background = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/_TE", typeof(Texture2D) );
+			picture = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/CardPicture/SpiderGuardian", typeof(Texture2D) );
+			
+			name = "Guardian";
+			info = "";
+			
+			isRare = false;
+			
+			energy = 4;
+			break;
+			
+		case 3:
+			background = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/_TE", typeof(Texture2D) );
+			picture = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/CardPicture/CatacombFighter", typeof(Texture2D) );
+			
+			name = "Catacomber";
+			info = "";
+			
+			isRare = false;
+			
+			energy = 2;
+			break;
+			
+		case 4:
+			background = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/_TE", typeof(Texture2D) );
+			picture = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/CardPicture/CoccoonSupport", typeof(Texture2D) );
+			
+			name = "Coccoon";
+			info = "Safe from attack";
+			
+			isRare = false;
+			
+			energy = 2;
+			break;
+			
+		case 5:
+			background = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/_TE", typeof(Texture2D) );
+			picture = (Texture2D)Resources.Load ("Images/GameState/Symbols/Card/CardPicture/whipSupport", typeof(Texture2D) );
+			
+			name = "Whip";
+			info = "Deal 1 damage.";
+			
+			isRare = false;
+			
+			energy = 1;
+			break;
+		}
 	}
 }
